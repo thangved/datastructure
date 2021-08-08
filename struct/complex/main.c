@@ -16,16 +16,20 @@ Complex readComplex()
 
 void printComplex(Complex complex)
 {
-    printf("%.3f + i%.3f", complex.Real, complex.Image);
+    printf("%.3f + i%.3f\n", complex.Real, complex.Image);
+}
+
+void add(Complex a, Complex b, Complex *c)
+{
+    c->Real = a.Real + b.Real;
+    c->Image = a.Image + b.Image;
 }
 
 int main(int argc, char const *argv[])
 {
-    Complex a;
-
-    a = readComplex(); // Gọi hàm nhập 1 số phức từ bàn phím
-
-    printComplex(a); // Hiển thị số phức a lên màn hình
+    Complex a = {1, 1};
+    Complex b;
+    add(a, a, &b);
 
     return 0;
 }

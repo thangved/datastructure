@@ -5,6 +5,19 @@ struct Point
     double x, y;
 };
 
+struct Point readPoint()
+{
+    struct Point point;
+    scanf("%lf%lf", &point.x, &point.y);
+    return point;
+}
+
+void printPoint(struct Point point)
+{
+    printf("(%0.3f, %0.3f)", point.x, point.y);
+}
+
+
 int main(int argc, char const *argv[])
 {
     struct Point a;

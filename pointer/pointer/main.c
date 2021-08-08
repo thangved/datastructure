@@ -14,12 +14,11 @@ int *q = &a;
 
 int main(int argc, char const *argv[])
 {
-    int a = 10;
-    int *p = &a;
+    void *p;
+    int a = 5, b = 2;
+    p = &a;
 
-    *p = 5;
-    int *q = p;
-    *q = 6;
+    b = *((int *)p);
 
     return 0;
 }
