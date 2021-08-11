@@ -8,6 +8,9 @@
 // int a = 10;
 // int *p = &a;
 
+int a = 5, b = 5;
+void *p = a;
+
 int a = 5;
 int *p = &a;
 int *q = &a;
