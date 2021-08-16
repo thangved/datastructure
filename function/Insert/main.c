@@ -22,5 +22,5 @@ int main(int argc, char const *argv[])
         printf("%d ", A[i]);
     }
 
-    return 0;
+    return 1;
 }

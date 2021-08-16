@@ -1,0 +1,6 @@
+{
+    "files.associations": {
+        "*.handlebars": "handlebars",
+        "math.h": "c"
+    }
+}
