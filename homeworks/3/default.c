@@ -27,3 +27,8 @@ long long factorial(int n)
         f *= i;
     return f;
 }
+int main(int argc, char const *argv[])
+{
+    double a = exp(1.2, 2);
+    return 0;
+}
