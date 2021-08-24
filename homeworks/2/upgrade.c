@@ -5,3 +5,8 @@ double sum(double r, int n)
         power *= r;
     return (power - 1) / (r - 1);
 }
+int main()
+{
+    double a = sum(20, 2);
+    return 0;
+}
