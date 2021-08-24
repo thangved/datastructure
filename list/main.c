@@ -1,11 +1,8 @@
-#include<stdio.h>
+#include <stdio.h>
+#include "AListLib.c"
 
-typedef struct{
-	int A[100];
-	int Last;
-} List;
-
-int main(){
-	List a;
-	a.Last = 10;
+int main()
+{
+	List list;
+	makenullList(&list);
 }
