@@ -1,7 +1,7 @@
 /**
  * Thư viện danh sách đặc dựa trên tài liệu của trường Đại học Cần Thơ
  * ------------------------
- * © 2021 Minh Thắng https://github.com/thangved
+ * Minh Thắng https://github.com/thangved
  */
 
 #include <stdio.h>
@@ -53,7 +53,7 @@ void swap(ElementType array[], int i, int j);
 void sort(List *pList);
 void unionSet(List list1, List list2, List *pList);
 
-// --- end functions interFace ---
+// --- end functions interFace
 
 // hàm chép toàn bộ các số chẵn trong danh sách L1 sang danh sách kết quả
 void copyEvenNumbers(List list1, List *pList2)
@@ -348,4 +348,22 @@ void unionSet(List list1, List list2, List *pList)
             pList->Elements[pList->Last] = list2.Elements[i];
             pList->Last++;
         }
+}
+
+int main()
+{
+    List list1, list2;
+
+    readList(&list1);
+    readList(&list2);
+    normalize(&list1);
+    normalize(&list2);
+
+    printList(list1);
+    printList(list2);
+
+    intersection(list1, list2, &list2);
+
+    printList(list2);
+    return 0;
 }

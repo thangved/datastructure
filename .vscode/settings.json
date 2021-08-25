@@ -2,6 +2,7 @@
     "files.associations": {
         "*.handlebars": "handlebars",
         "string.h": "c",
-        "stdio.h": "c"
+        "stdio.h": "c",
+        "ranges": "c"
     }
 }

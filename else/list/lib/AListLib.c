@@ -53,7 +53,7 @@ void swap(ElementType array[], int i, int j);
 void sort(List *pList);
 void unionSet(List list1, List list2, List *pList);
 
-// --- end functions interFace ---
+// --- end functions interFace
 
 // hàm chép toàn bộ các số chẵn trong danh sách L1 sang danh sách kết quả
 void copyEvenNumbers(List list1, List *pList2)
