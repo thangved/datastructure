@@ -1,26 +1,32 @@
 /**
- * Thư viện danh sách đặc dựa trên tài liệu của trường Đại học Cần Thơ
+ * Thư viện danh sách đặc dựa trên tài liệu của trường Đại học Cần Thơ.
  * ------------------------
- * © 2021 Minh Thắng https://github.com/thangved
+ * © 2021 Minh Thắng https://github.com/thangved.
  */
 
 #include <stdio.h>
 
-// define type
-#define MaxLength 300
-typedef int ElementType;
+/*__DEFINE__TYPE__*/
+#ifndef MaxLength
+#define MaxLength 300 // So phan tu toi da
+#endif
+
+#ifndef ElementType
+typedef int ElementType; // Kieu du lieu cua phan tu
+#endif
+
+#ifndef Position
 typedef int Position; // Position = index + 1
+#endif
 
 typedef struct
 {
     ElementType Elements[MaxLength];
     Position Last;
 } List;
+/*__END__DEFINE__TYPE__*/
 
-// --- end define type ---
-
-// --- functions interFace ---
-
+/* __FUNCTIONS__INTERFACE__ */
 void copyEvenNumbers(List list1, List *pList2);
 int countList(ElementType x, List list);
 void deleteList(Position p, List *pL);
@@ -52,8 +58,7 @@ ElementType sumList(List list);
 void swap(ElementType array[], int i, int j);
 void sort(List *pList);
 void unionSet(List list1, List list2, List *pList);
-
-// --- end functions interFace ---
+/* __END__FUNCTIONS__INTERFACE__*/
 
 // hàm chép toàn bộ các số chẵn trong danh sách L1 sang danh sách kết quả
 void copyEvenNumbers(List list1, List *pList2)

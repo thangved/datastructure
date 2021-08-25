@@ -1,15 +1,20 @@
 /**
- * Thư viện danh sách sinh viên dựa trên tài liệu của trường Đại học Cần Thơ
+ * Thư viện danh sách sinh viên dựa trên tài liệu của trường Đại học Cần Thơ.
  * ------------------------
- * © 2021 Minh Thắng https://github.com/thangved
+ * © 2021 Minh Thắng https://github.com/thangved.
  */
 
 #include <stdio.h>
 #include <string.h>
 
-// --- define type ---
+/*__DEFINE__TYPE__*/
+#ifndef MaxLength
+#define MaxLength 40 // So luong phan tu toi da
+#endif
 
-#define maxLength 40
+#ifndef Position
+typedef int Position; //Position <=> index + 1
+#endif
 
 struct SinhVien
 {
@@ -18,18 +23,15 @@ struct SinhVien
 };
 
 typedef struct SinhVien ElementType;
-typedef int Position;
 
 typedef struct
 {
-    ElementType A[maxLength];
+    ElementType A[MaxLength];
     Position n;
 } DanhSach;
+/*__END__DEFINE__TYPE__*/
 
-// --- end define type ---
-
-// --- functions interFace
-
+/*__FUNCTIONS__INTERFACE__*/
 void chenCuoi(struct SinhVien sinhVien, DanhSach *pDanhSach);
 int checkDat(struct SinhVien sinhVien);
 DanhSach chepKhongDat(DanhSach iDanhSach);
@@ -44,8 +46,7 @@ int tim(char *MSSV, DanhSach danhSach);
 float tongDiem(struct SinhVien sinhVien);
 void xoaTai(int p, DanhSach *pDanhSach);
 void xoaSinhVien(char *MSSV, DanhSach *pDanhSach);
-
-// --- end functions interFace
+/*__END__FUNCTIONS__INTERFACE__*/
 
 // chen them 1 SinhVien vao cuoi DanhSach
 void chenCuoi(struct SinhVien sinhVien, DanhSach *pDanhSach)
