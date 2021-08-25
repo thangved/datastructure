@@ -1,0 +1,7 @@
+{
+    "files.associations": {
+        "*.handlebars": "handlebars",
+        "string.h": "c",
+        "stdio.h": "c"
+    }
+}
