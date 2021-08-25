@@ -1,6 +1,6 @@
 int main(int argc, char const *argv[])
 {
-    int Sum1, k, n, j;
+    int Sum1, k, n = 100, j;
 
     Sum1 = 0;
     k = 1;
