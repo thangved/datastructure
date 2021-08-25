@@ -1,13 +1,19 @@
 #include <stdlib.h>
 #include <stdio.h>
 
-void Insert(int x, int p, int A[100], int *pn)
+void Insert(int x, int p, int A[], int *pn)
 {
-    for (int i = *pn; i > p; i--)
-        A[i] = A[i - 1];
+    if (sizeof(A) / sizeof(int) == *pn)
+    {
+    }
+    else
+    {
+        for (int i = *pn; i > p; i--)
+            A[i] = A[i - 1];
 
-    A[p] = x;
-    *pn = *pn + 1;
+        A[p] = x;
+        *pn = *pn + 1;
+    }
 }
 
 int main(int argc, char const *argv[])
