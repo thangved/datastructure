@@ -100,13 +100,10 @@ void deleteList(Position p, List *pL)
 // tim hieu cua hai tap
 void difference(List list1, List list2, List *pList)
 {
-    pList->Last = 0;
+    makenullList(pList);
     for (int i = 0; i < list1.Last; i++)
         if (!member(list1.Elements[i], list2))
-        {
-            pList->Elements[pList->Last] = list1.Elements[i];
-            pList->Last++;
-        }
+            insertSet(list1.Elements[i], pList);
 }
 
 // ham kiem tra mot ds co rong hay khong
@@ -176,13 +173,10 @@ void insertSet(ElementType x, List *pList)
 // ham tim tap giao cua L1 L2
 void intersection(List list1, List list2, List *pList)
 {
-    pList->Last = 0;
+    makenullList(pList);
     for (int i = 0; i < list1.Last; i++)
         if (member(list1.Elements[i], list2))
-        {
-            pList->Elements[pList->Last] = list1.Elements[i];
-            pList->Last++;
-        }
+            insertSet(list1.Elements[i], pList);
 }
 
 // ham tra ve vi tri dau tien cua phan tu x co trong List
@@ -288,6 +282,8 @@ ElementType retrieve(Position p, List list)
 // xoa tat ca phan tu co gia tri x trong List
 void removeAll(ElementType x, List *pList)
 {
+    if (!member(x, *pList))
+        return;
     while (locate(x, *pList) <= pList->Last)
         deleteList(locate(x, *pList), pList);
 }
@@ -340,17 +336,12 @@ void sort(List *pList)
 // tap hop cua 2 tap
 void unionSet(List list1, List list2, List *pList)
 {
-    pList->Last = 0;
+    makenullList(pList);
     int i;
     for (i = 0; i < list1.Last; i++)
-    {
-        pList->Elements[pList->Last] = list1.Elements[i];
-        pList->Last++;
-    }
+        insertSet(list1.Elements[i], pList);
+
     for (i = 0; i < list2.Last; i++)
         if (!member(list2.Elements[i], list1))
-        {
-            pList->Elements[pList->Last] = list2.Elements[i];
-            pList->Last++;
-        }
+            insertSet(list2.Elements[i], pList);
 }
