@@ -236,8 +236,8 @@ Position next(Position p, List L)
 // lam cho List co phan tu duy nhat
 void normalize(List *pList)
 {
-    for (int i = 0; i <= pList->Last; i++)
-        for (int j = i + 1; j <= pList->Last; j++)
+    for (int i = 0; i < pList->Last; i++)
+        for (int j = i + 1; j < pList->Last; j++)
             if (pList->Elements[i] == pList->Elements[j])
             {
                 deleteList(j, pList);
