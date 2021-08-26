@@ -327,10 +327,10 @@ void swap(ElementType array[], int i, int j)
 // ham sap xep
 void sort(List *pList)
 {
-    for (Position p = 1; p <= pList->Last; p++)
-        for (Position q = p + 1; q <= pList->Last; q++)
-            if (pList->Elements[p - 1] > pList->Elements[q - 1])
-                swap(pList->Elements, p - 1, q - 1);
+    for (int i = 1; i <= pList->Last; i++)
+        for (int j = i + 1; j <= pList->Last; j++)
+            if (pList->Elements[i] > pList->Elements[j])
+                swap(pList->Elements, i, j);
 }
 
 // tap hop cua 2 tap
