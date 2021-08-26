@@ -236,12 +236,12 @@ Position next(Position p, List L)
 // lam cho List co phan tu duy nhat
 void normalize(List *pList)
 {
-    for (Position p = 1; p <= pList->Last; p++)
-        for (Position q = p + 1; q <= pList->Last; q++)
-            if (pList->Elements[p - 1] == pList->Elements[q - 1])
+    for (int i = 0; i <= pList->Last; i++)
+        for (int j = i + 1; j <= pList->Last; j++)
+            if (pList->Elements[i] == pList->Elements[j])
             {
-                deleteList(q, pList);
-                q--;
+                deleteList(j, pList);
+                j--;
             }
 }
 
@@ -299,7 +299,7 @@ void readList(List *pList)
         scanf("%d", &pList->Elements[p - 1]);
 }
 
-// ham them 1 phan tu vao List neu no chua co trong List
+// ham them n phan tu vao List neu no chua co trong List
 void readSet(List *pList)
 {
     readList(pList);
