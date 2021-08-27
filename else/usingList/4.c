@@ -1,151 +1,10 @@
-/**
- * @file AListLib.c
- * @author Minh Thắng (https://github.com/thangved)
- * @brief Thư viện Danh sách đặc dựa trên tài liệu của Trường Đại học Cần Thơ
- * @version 0.1
- * @date 2021-08-27
- * 
- * @copyright Copyright (c) Minh Thang 2021
- * 
- */
+// Khai báo sử dụng thư viện AListLib.c
+// Định nghĩa các hàm nhập tập hợp và hiển thị danh sách
+// Định nghĩa hàm tìm tập hợp hiệu của 2 tập hợp
+// Gọi thực thi các hàm trên trong hàm main()
 
-#include <stdio.h>
+#include "AListLib.c"
 
-#define lib 1
-
-/*__DEFINE__TYPE__*/
-#ifndef MaxLength
-#define MaxLength 300 // So phan tu toi da
-#endif
-
-#ifndef ElementType
-typedef int ElementType; // Kieu du lieu cua phan tu
-#endif
-
-#ifndef Position
-typedef int Position; // Position = index + 1
-#endif
-
-typedef struct
-{
-    ElementType Elements[MaxLength];
-    Position Last;
-} List;
-/*__END__DEFINE__TYPE__*/
-
-/* __FUNCTIONS__INTERFACE__ */
-void deleteList(Position p, List *pL);
-int emptyList(List list);
-Position endList(List list);
-int fullList(List list);
-Position first(List list);
-void insertList(ElementType x, Position p, List *pL);
-Position locate(ElementType x, List list);
-void makenullList(List *pL);
-Position next(Position p, List L);
-Position previous(Position p, List L);
-ElementType retrieve(Position p, List list);
-/* __END__FUNCTIONS__INTERFACE__*/
-
-// ham xoa mot phan tu tai vi tri p
-void deleteList(Position p, List *pL)
-{
-    if (p < first(*pL) || p >= endList(*pL))
-    {
-        printf("Vi tri khong hop le\n");
-        return;
-    }
-
-    for (Position i = p; i < pL->Last; i++)
-        pL->Elements[i - 1] = pL->Elements[i];
-
-    pL->Last--;
-}
-
-// ham kiem tra mot ds co rong hay khong
-int emptyList(List list)
-{
-    return list.Last == 0;
-}
-
-// ham tra ve vi tri sau vi tri cuoi cung cua List
-Position endList(List list)
-{
-    return list.Last + 1;
-}
-
-// ham kiem tra ham co full khong
-int fullList(List list)
-{
-    return list.Last == MaxLength;
-}
-
-// ham tra ve vi tri dau tien cua List
-Position first(List list)
-{
-    return 1;
-}
-
-// ham chen 1 phan tu vao List
-void insertList(ElementType x, Position p, List *pL)
-{
-    if (fullList(*pL))
-        return;
-
-    if (p < first(*pL) || p > endList(*pL) + 1)
-        return;
-
-    for (Position i = pL->Last; i >= p; i++)
-        pL->Elements[i] = pL->Elements[i - 1];
-
-    pL->Elements[p - 1] = x;
-    pL->Last++;
-}
-
-// ham tra ve vi tri dau tien cua phan tu x co trong List
-Position locate(ElementType x, List list)
-{
-    for (int i = 1; i <= list.Last; i++)
-        if (x == retrieve(i, list))
-            return i;
-    return list.Last + 1;
-}
-
-// lam rong danh sach
-void makenullList(List *pL)
-{
-    pL->Last = 0;
-}
-
-// tra ve vi tri sau vi tri p trong List
-Position next(Position p, List L)
-{
-    if (p > L.Last)
-        return 0;
-    if (p == L.Last)
-        return endList(L);
-    return p + 1;
-}
-
-// tra ve vi tri truoc vi tri p trong List
-Position previous(Position p, List L)
-{
-    if (p <= first(L))
-        return 0;
-    return p - 1;
-}
-
-// ham tra ve gia tri cua List tai vi tri p
-ElementType retrieve(Position p, List list)
-{
-    if (!(p > list.Last))
-        return list.Elements[p - 1];
-    return 0;
-}
-
-/* Cac ham khong co trong AListLib*/
-
-#ifndef lib
 /* __FUNCTIONS__INTERFACE__ */
 void copyEvenNumbers(List list1, List *pList2);
 int countList(ElementType x, List list);
@@ -211,10 +70,7 @@ float getAvg(List list)
 {
     if (list.Last == 0)
         return -10000;
-    float sum = 0;
-    for (int i = 0; i < list.Last; i++)
-        sum += list.Elements[i];
-    return (float)sum / list.Last;
+    return (float)sumList(list) / list.Last;
 }
 
 // them phan tu vao cuoi List
@@ -269,7 +125,7 @@ void normalize(List *pList)
         for (int j = i + 1; j < pList->Last; j++)
             if (pList->Elements[i] == pList->Elements[j])
             {
-                deleteList(j, pList);
+                deleteList(j + 1, pList);
                 j--;
             }
 }
@@ -340,8 +196,8 @@ void swap(ElementType array[], int i, int j)
 // ham sap xep
 void sort(List *pList)
 {
-    for (int i = 1; i <= pList->Last; i++)
-        for (int j = i + 1; j <= pList->Last; j++)
+    for (int i = 0; i < pList->Last; i++)
+        for (int j = i + 1; j < pList->Last; j++)
             if (pList->Elements[i] > pList->Elements[j])
                 swap(pList->Elements, i, j);
 }
@@ -358,4 +214,17 @@ void unionSet(List list1, List list2, List *pList)
         if (!member(list2.Elements[i], list1))
             insertSet(list2.Elements[i], pList);
 }
-#endif
+
+int main()
+{
+    List L1, L2;
+    readSet(&L1);
+    readSet(&L2);
+
+    printList(L1);
+    printList(L2);
+
+    difference(L1, L2, &L2);
+    printList(L2);
+    return 0;
+}

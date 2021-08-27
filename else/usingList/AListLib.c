@@ -340,8 +340,8 @@ void swap(ElementType array[], int i, int j)
 // ham sap xep
 void sort(List *pList)
 {
-    for (int i = 1; i <= pList->Last; i++)
-        for (int j = i + 1; j <= pList->Last; j++)
+    for (int i = 0; i < pList->Last; i++)
+        for (int j = i + 1; j < pList->Last; j++)
             if (pList->Elements[i] > pList->Elements[j])
                 swap(pList->Elements, i, j);
 }

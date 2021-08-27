@@ -141,10 +141,7 @@ float getAvg(List list)
 {
     if (list.Last == 0)
         return -10000;
-    float sum = 0;
-    for (int i = 0; i < list.Last; i++)
-        sum += list.Elements[i];
-    return (float)sum / list.Last;
+    return (float)sumList(list) / list.Last;
 }
 
 // ham chen 1 phan tu vao List
@@ -240,7 +237,7 @@ void normalize(List *pList)
         for (int j = i + 1; j < pList->Last; j++)
             if (pList->Elements[i] == pList->Elements[j])
             {
-                deleteList(j, pList);
+                deleteList(j + 1, pList);
                 j--;
             }
 }
@@ -327,8 +324,8 @@ void swap(ElementType array[], int i, int j)
 // ham sap xep
 void sort(List *pList)
 {
-    for (int i = 1; i <= pList->Last; i++)
-        for (int j = i + 1; j <= pList->Last; j++)
+    for (int i = 0; i < pList->Last; i++)
+        for (int j = i + 1; j < pList->Last; j++)
             if (pList->Elements[i] > pList->Elements[j])
                 swap(pList->Elements, i, j);
 }
