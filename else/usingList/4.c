@@ -224,7 +224,7 @@ int main()
     printList(L1);
     printList(L2);
 
-    difference(L1, L2, &L2);
+    unionSet(L1, L2, &L2);
     printList(L2);
     return 0;
 }
