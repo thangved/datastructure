@@ -293,9 +293,7 @@ void printOddNumbers(List list)
 // xoa tat ca phan tu co gia tri x trong List
 void removeAll(ElementType x, List *pList)
 {
-    if (!member(x, *pList))
-        return;
-    while (locate(x, *pList) <= pList->Last)
+    while (member(x, *pList))
         deleteList(locate(x, *pList), pList);
 }
 
