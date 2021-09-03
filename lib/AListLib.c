@@ -284,14 +284,16 @@ void removeAll(ElementType x, List *pList)
 }
 
 // ham nhap List tu ban phim
-void readList(List *pList)
+void readList(List *pL)
 {
-    Position last;
-    scanf("%d", &last);
-    pList->Last = last;
-
-    for (Position p = 1; p <= pList->Last; p++)
-        scanf("%d", &pList->Elements[p - 1]);
+    makenullList(pL);
+    int n, e;
+    scanf("%d", &n);
+    for (int i = 0; i < n; i++)
+    {
+        scanf("%d", &e);
+        insertList(e, pL->Last + 1, pL);
+    }
 }
 
 // ham them n phan tu vao List neu no chua co trong List
