@@ -1,7 +1,12 @@
 /**
- * Thư viện danh sách sinh viên dựa trên tài liệu của trường Đại học Cần Thơ.
- * ------------------------
- * © 2021 Minh Thắng https://github.com/thangved.
+ * @file SVLib.c
+ * @author Minh Thắng (https://github.com/thangved)
+ * @brief 
+ * @version 0.1
+ * @date 2021-09-05
+ * 
+ * @copyright Copyright (c) Minh Thắng 2021
+ * 
  */
 
 #include <stdio.h>
