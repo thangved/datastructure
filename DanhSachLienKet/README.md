@@ -5,7 +5,7 @@
 ### struct Node
 
 > `struct Node` là một cấu trúc gồm 2 trường:
-> 
+>
 > - Trường `Element` lưu trữ giá trị có kiểu ElementType;
 > - Trường `Next` là con trỏ lưu địa chỉ của phần tử kế tiếp trong danh sách có kiểu struct Node *.
 
@@ -37,5 +37,9 @@ typedef Position List;
 - [Các phép toán trên danh sách liên kết các số nguyên](./CacPhepToanTrenDanhSachLienKetCacSoNguyen)
 
 - [Áp dụng danh sách liên kết các số nguyên](./ApDungDanhSachLienKetCacSoNguyen)
+
+- [Danh sách sinh viên](./DanhSachSinhVien)
+
+- [Đa thức](./DaThuc)
 
 - [Thư viện PListLib.c](./lib/PListLib.c)

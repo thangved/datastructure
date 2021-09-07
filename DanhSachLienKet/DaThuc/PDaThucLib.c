@@ -150,22 +150,3 @@ DaThuc tinhDaoHam(DaThuc D)
     return D;
 }
 /*__END__FUNCTIONS__BODY__*/
-int main()
-{
-
-    DaThuc d = khoitao();
-    struct Node *p = d;
-    DonThuc s1 = {6.2, 4};
-    DonThuc s2 = {4.2, 0};
-    DonThuc s3 = {2, 4};
-    chenDonThuc(s1, &d);
-    chenDonThuc(s2, &d);
-    chenDonThuc(s3, &d);
-    while (p->Next != NULL)
-    {
-        DonThuc e = p->Next->e;
-        printf("%.3fX^%d ", e.he_so, e.bac);
-        p = p->Next;
-    }
-    return 0;
-}

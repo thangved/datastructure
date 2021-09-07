@@ -126,7 +126,7 @@ ElementType retrieve(Position P, List L)
         return P->Next->Element;
 }
 /*__END__FUNCTION__*/
-
+#define USE_ALL 1
 #ifdef USE_ALL
 /*__OTHER__FUNCTION__*/
 /*__DECLARATION__*/
@@ -161,8 +161,9 @@ void addFirst(ElementType x, List *pL)
 void append(ElementType x, List *pL)
 {
     Position P = endList(*pL);
-    P->Next = (Position)malloc(sizeof(Position));
-    P->Next->Element = x;
+    Position T = (Position)malloc(sizeof(Position));
+    T->Element = x;
+    P->Next = T;
 }
 void copyEvenNumbers(List L, List *pL)
 {
