@@ -15,7 +15,7 @@
 struct Node{
     ElementType Element;
     struct Node * Next;
-}
+};
 ```
 
 ### Position
