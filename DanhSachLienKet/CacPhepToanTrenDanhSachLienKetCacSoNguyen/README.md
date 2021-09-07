@@ -1,40 +1,6 @@
 # CÁC PHÉP TOÁN TRÊN DANH SÁCH LIÊN KẾT CÁC SỐ NGUYÊN
 
-## DANH SÁCH LIÊN KẾT
-
-### struct Node
-
-> `struct Node` là một cấu trúc gồm 2 trường:
->
-> - Trường `Element` lưu trữ giá trị có kiểu ElementType;
-> - Trường `Next` là con trỏ lưu địa chỉ của phần tử kế tiếp trong danh sách có kiểu struct Node *.
-
-```c
-struct Node{
-    ElementType Element;
-    struct Node * Next;
-}
-```
-
-### Position
-
-> `Position` chỉ vị trí của phần tử, vị trí của phần tử là phần tử trước nó và có kiểu là `struct Node*`
-
-```c
-typedef struct Node* Position;
-```
-
-### List
-
-> `List` chỉ kiểu của danh sách đồng thời là `Header` - vị trí đầu của danh sách có kiểu là Position.
-
-```c
-typedef Position List;
-```
-
-## CÁC PHÉP TOÁN TRÊN DANH SÁCH LIÊN KẾT CÁC SỐ NGUYÊN
-
-### deleteList
+## deleteList
 
 > Xóa phần tử có `Position P`.
 
@@ -51,7 +17,7 @@ void deleteList(Position P, List *pL)
 }
 ```
 
-### emptyList
+## emptyList
 
 > Kiểm tra danh sách rỗng.
 
@@ -62,7 +28,7 @@ int emptyList(List L)
 }
 ```
 
-### endList
+## endList
 
 > Trả về vị trí sau vị trí cuối cùng của danh sách `L`.
 
@@ -79,7 +45,7 @@ Position endList(List L)
 }
 ```
 
-### first
+## first
 
 > Trả về vị trí đầu tiên của danh sách `L`.
 
@@ -90,7 +56,7 @@ Position first(List L)
 }
 ```
 
-### insertList
+## insertList
 
 > Chèn thêm phần tử vào vị trí `P`.
 
@@ -105,7 +71,7 @@ void insertList(ElementType x, Position P, List *pL)
 }
 ```
 
-### locate
+## locate
 
 > Trả về vị trí đầu tiên của `x` trong danh sách `L`.
 
@@ -123,7 +89,7 @@ Position locate(ElementType x, List L)
 }
 ```
 
-### makenullList
+## makenullList
 
 > Khởi tạo danh sách rỗng.
 
@@ -135,7 +101,7 @@ void makenullList(List *pL)
 }
 ```
 
-### myLocate
+## myLocate
 
 > Trả về vị trí thứ `i` của phần tử `x` trong danh sách `L`.
 
@@ -156,7 +122,7 @@ Position myLocate(ElementType x, int i, List L)
 }
 ```
 
-### next
+## next
 
 > Trả về vị trí tiếp theo của `P`.
 
@@ -167,7 +133,7 @@ Position next(Position P, List L)
 }
 ```
 
-### previous
+## previous
 
 > Trả về vị trí trước `P`.
 
@@ -184,7 +150,7 @@ Position previous(Position P, List L)
 }
 ```
 
-### retrieve
+## retrieve
 
 > Trả về giá trị của phần tử có vị trí `P`.
 
