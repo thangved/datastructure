@@ -126,7 +126,7 @@ ElementType retrieve(Position P, List L)
         return P->Next->Element;
 }
 /*__END__FUNCTION__*/
-#define USE_ALL 1
+// #define USE_ALL 1
 #ifdef USE_ALL
 /*__OTHER__FUNCTION__*/
 /*__DECLARATION__*/
