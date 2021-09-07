@@ -71,7 +71,7 @@ Position first(List L)
 void insertList(ElementType x, Position P, List *pL)
 {
     Position T;
-    T = (Position)malloc(sizeof(Position));
+    T = (Position)malloc(sizeof(struct Node));
     T->Element = x;
     T->Next = P->Next;
     P->Next = T;
@@ -89,7 +89,7 @@ Position locate(ElementType x, List L)
 }
 void makenullList(List *pL)
 {
-    *pL = (List)malloc(sizeof(List));
+    *pL = (List)malloc(sizeof(struct Node));
     (*pL)->Next = NULL;
 }
 Position myLocate(ElementType x, int i, List L)
@@ -153,7 +153,7 @@ List unionSet(List L1, List L2);         // tinh tap hop cua 2 ds
 void addFirst(ElementType x, List *pL)
 {
     Position P;
-    P = (Position)malloc(sizeof(Position));
+    P = (Position)malloc(sizeof(struct Node));
     P->Element = x;
     P->Next = (*pL)->Next;
     (*pL)->Next = P;
@@ -161,7 +161,7 @@ void addFirst(ElementType x, List *pL)
 void append(ElementType x, List *pL)
 {
     Position P = endList(*pL);
-    Position T = (Position)malloc(sizeof(Position));
+    Position T = (Position)malloc(sizeof(struct Node));
     T->Element = x;
     P->Next = T;
 }
@@ -308,7 +308,7 @@ void readList(List *pL)
     scanf("%d", &n);
     for (int i = 0; i < n; i++)
     {
-        N = (Position)malloc(sizeof(Position));
+        N = (Position)malloc(sizeof(struct Node));
         scanf("%d", &N->Element);
         P->Next = N;
         P = P->Next;

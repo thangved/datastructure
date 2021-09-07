@@ -2,6 +2,6 @@
 
 void makenullList(List *pL)
 {
-    *pL = (List)malloc(sizeof(List));
+    *pL = (List)malloc(sizeof(struct Node));
     (*pL)->Next = NULL;
 }

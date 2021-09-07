@@ -66,7 +66,7 @@ Position first(List L)
 void insertList(ElementType x, Position P, List *pL)
 {
     Position T;
-    T = (Position)malloc(sizeof(Position));
+    T = (Position)malloc(sizeof(struct Node));
     T->Element = x;
     T->Next = P->Next;
     P->Next = T;
@@ -98,7 +98,7 @@ Position locate(ElementType x, List L)
 ```c
 void makenullList(List *pL)
 {
-    *pL = (List)malloc(sizeof(List));
+    *pL = (List)malloc(sizeof(struct Node));
     (*pL)->Next = NULL;
 }
 ```
@@ -174,7 +174,7 @@ ElementType retrieve(Position P, List L)
 void addFirst(ElementType x, List *pL)
 {
     Position P;
-    P = (Position)malloc(sizeof(Position));
+    P = (Position)malloc(sizeof(struct Node));
     P->Element = x;
     P->Next = (*pL)->Next;
     (*pL)->Next = P;
@@ -189,7 +189,7 @@ void addFirst(ElementType x, List *pL)
 void append(ElementType x, List *pL)
 {
     Position P = endList(*pL);
-    P->Next = (Position)malloc(sizeof(Position));
+    P->Next = (Position)malloc(sizeof(struct Node));
     P->Next->Element = x;
 }
 ```
@@ -426,7 +426,7 @@ void readList(List *pL)
     scanf("%d", &n);
     for (int i = 0; i < n; i++)
     {
-        N = (Position)malloc(sizeof(Position));
+        N = (Position)malloc(sizeof(struct Node));
         scanf("%d", &N->Element);
         P->Next = N;
         P = P->Next;

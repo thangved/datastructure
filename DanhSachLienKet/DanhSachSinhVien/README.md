@@ -35,7 +35,7 @@ int append(Student s, List *pL)
             return 0;
         P = P->Next;
     }
-    P->Next = (List)malloc(sizeof(List));
+    P->Next = (List)malloc(sizeof(struct Node));
     strcpy(P->Next->Element.ID, s.ID);
     strcpy(P->Next->Element.Name, s.Name);
     P->Next->Element.R1 = s.R1;
@@ -53,7 +53,7 @@ int append(Student s, List *pL)
 List getList()
 {
     List L;
-    L = (List)malloc(sizeof(List));
+    L = (List)malloc(sizeof(struct Node));
     return L;
 }
 ```

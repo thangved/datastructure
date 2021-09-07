@@ -36,7 +36,7 @@ void chenDonThuc(DonThuc x, DaThuc *pD)
         }
         if (P->Next->e.bac < x.bac)
         {
-            Position T = (Position)malloc(sizeof(Position));
+            Position T = (Position)malloc(sizeof(struct Node));
             T->e = x;
             T->Next = P->Next;
             P->Next = T;
@@ -44,7 +44,7 @@ void chenDonThuc(DonThuc x, DaThuc *pD)
         }
         P = P->Next;
     }
-    Position T = (Position)malloc(sizeof(Position));
+    Position T = (Position)malloc(sizeof(struct Node));
     T->e = x;
     P->Next = T;
 }

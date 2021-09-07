@@ -7,9 +7,9 @@
 ### struct Node
 
 > `struct Node` là một cấu trúc gồm 2 trường:
-> 
+>
 > - Trường `Element` lưu trữ giá trị có kiểu ElementType;
-> - Trường `Next` là con trỏ lưu địa chỉ của phần tử kế tiếp trong danh sách có kiểu struct Node *.
+> - Trường `Next` là con trỏ lưu địa chỉ của phần tử kế tiếp trong danh sách có kiểu `struct Node *`.
 
 ```c
 struct Node{
@@ -20,7 +20,7 @@ struct Node{
 
 ### Position
 
-> `Position` chỉ vị trí của phần tử, vị trí của phần tử là phần tử trước nó và có kiểu là `struct Node*`
+> `Position` chỉ vị trí của phần tử, vị trí của phần tử là địa chỉ phần tử trước nó và có kiểu là `struct Node*`
 
 ```c
 typedef struct Node* Position;
@@ -28,7 +28,7 @@ typedef struct Node* Position;
 
 ### List
 
-> `List` chỉ kiểu của danh sách đồng thời là `Header` - vị trí đầu của danh sách có kiểu là Position.
+> `List` chỉ kiểu của danh sách đồng thời là `Header` - vị trí đầu của danh sách và có kiểu là `Position`.
 
 ```c
 typedef Position List;
