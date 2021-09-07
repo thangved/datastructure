@@ -21,10 +21,10 @@ typedef struct
 /*__END__DEFINE__TYPE__*/
 void addFirst(ElementType x, List *pL)
 {
-    for (int i = 0; i < pL->Last; i++)
-        pL->Elements[i + 1] = pL->Elements[i];
-    pL->Last++;
+    for (int i = pL->Last; i > 0; i--)
+        pL->Elements[i] = pL->Elements[i - 1];
     pL->Elements[0] = x;
+    pL->Last++;
 }
 
 void makenullList(List *pL)
