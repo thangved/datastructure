@@ -126,7 +126,7 @@ ElementType retrieve(Position P, List L)
         return P->Next->Element;
 }
 /*__END__FUNCTION__*/
-// #define USE_ALL 1
+#define USE_ALL 1
 #ifdef USE_ALL
 /*__OTHER__FUNCTION__*/
 /*__DECLARATION__*/
@@ -357,3 +357,10 @@ List unionSet(List L1, List L2)
 /*__END__FUNCTION__BODY__*/
 /*__END__OTHER__FUNCTION__*/
 #endif
+int main(int argc, char const *argv[])
+{
+    List L;
+    makenullList(&L);
+    append(1, &L);
+    return 0;
+}
