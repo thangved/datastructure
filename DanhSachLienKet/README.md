@@ -34,8 +34,8 @@ typedef Position List;
 
 ## LIÊN KẾT
 
-- [Các phép toán trên danh sách liên kết các số nguyên](./CacPhepToanTrenDanhSachLienKetCacSoNguyen/README.md)
+- [Các phép toán trên danh sách liên kết các số nguyên](./CacPhepToanTrenDanhSachLienKetCacSoNguyen)
 
-- [Áp dụng danh sách liên kết các số nguyên](./ApDungDanhSachLienKetCacSoNguyen/README.md)
+- [Áp dụng danh sách liên kết các số nguyên](./ApDungDanhSachLienKetCacSoNguyen)
 
 - Thư viện [PListLib.c](./lib/PListLib.c)
