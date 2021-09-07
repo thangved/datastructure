@@ -1,11 +1,13 @@
 # DANH SÁCH LIÊN KẾT
 
+![code.png](https://raw.githubusercontent.com/thangved/images/main/2021/09/07-16-20-05-code.png)
+
 ## MỘT SỐ KHÁI NIỆM
 
 ### struct Node
 
 > `struct Node` là một cấu trúc gồm 2 trường:
->
+> 
 > - Trường `Element` lưu trữ giá trị có kiểu ElementType;
 > - Trường `Next` là con trỏ lưu địa chỉ của phần tử kế tiếp trong danh sách có kiểu struct Node *.
 
