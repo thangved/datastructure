@@ -1,7 +1,7 @@
 /**
- * @file define.c
- * @author Minh Thắng (you@domain.com)
- * @brief define type
+ * @file define.h
+ * @author Minh Thắng (https://github.com/thangved)
+ * @brief Định nghĩa các kiểu dữ liệu
  * @version 0.1
  * @date 2021-09-07
  * 

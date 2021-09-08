@@ -1,4 +1,4 @@
-#include "define.c"
+#include <define.h>
 
 Position endList(List L)
 {

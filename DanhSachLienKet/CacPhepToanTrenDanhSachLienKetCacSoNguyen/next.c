@@ -1,4 +1,4 @@
-#include "define.c"
+#include <define.h>
 
 Position next(Position P, List L)
 {

@@ -1,4 +1,4 @@
-#include "define.c"
+#include <define.h>
 
 ElementType retrieve(Position P, List L)
 {
