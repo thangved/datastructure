@@ -299,8 +299,16 @@ void readList(List *pL)
 // ham them n phan tu vao List neu no chua co trong List
 void readSet(List *pL)
 {
-    readList(pL);
-    normalize(pL);
+    makenullList(pL);
+    int n;
+    scanf("%d", &n);
+    ElementType E;
+    for (Position i = 1; i <= n; i++)
+    {
+        scanf("%d", &E);
+        if (!member(E, *pL))
+            insertList(E, pL->Last + 1, pL);
+    }
 }
 
 // trả về tổng giá trị các phần tử trong danh sách L

@@ -252,7 +252,7 @@ void normalize(List *pL)
         while (Q->Next != NULL)
         {
             if (Q->Next->Element == P->Next->Element)
-                deleteList(Q->Next, pL);
+                deleteList(Q, pL);
             Q = Q->Next;
         }
         P = P->Next;
