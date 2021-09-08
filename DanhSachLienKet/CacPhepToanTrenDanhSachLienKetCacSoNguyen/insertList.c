@@ -1,4 +1,4 @@
-#include <define.h>
+#include "define.h"
 
 void insertList(ElementType x, Position P, List *pL)
 {

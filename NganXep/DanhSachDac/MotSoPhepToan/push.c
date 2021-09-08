@@ -1,4 +1,4 @@
-#include <define.h>
+#include "define.h"
 #include "fullStack.c"
 
 void push(ElementType x, Stack *pS)

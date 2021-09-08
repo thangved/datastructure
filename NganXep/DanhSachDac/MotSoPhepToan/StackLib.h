@@ -1,4 +1,4 @@
-#include <define.h>
+#include "define.h"
 
 #include "emptyStack.c"
 #include "fullStack.c"

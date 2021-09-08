@@ -1,4 +1,4 @@
-#include <define.h>
+#include "define.h"
 
 Position locate(ElementType x, List L)
 {

@@ -1,4 +1,4 @@
-#include <define.h>
+#include "define.h"
 
 Position first(List L)
 {
