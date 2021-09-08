@@ -1,6 +1,8 @@
 #include <StackLib.h>
 
-void xoa(Stack *pS)
+void xoa(NganXep *pS)
 {
-    pop(pS);
+    if (pS->Dinh == SoPhanTu)
+        return;
+    pS->Dinh++;
 }

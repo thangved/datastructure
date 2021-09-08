@@ -79,4 +79,87 @@ void push(ElementType x, Stack *pS)
 }
 ```
 
-## MỘT SỐ PHÉP TOÁN KHÁC
+## MỘT SỐ PHÉP TOÁN KHÁC (BÀI TẬP TRÊN ELSE)
+
+### xoa
+
+> Xóa phần tử đỉnh.
+
+```c
+void xoa(NganXep *pS)
+{
+    if (pS->Dinh == SoPhanTu)
+        return;
+    pS->Dinh++;
+}
+```
+
+### khoitao
+
+> Khởi tạo `Stack` rỗng.
+
+```c
+void khoitao(NganXep *pS)
+{
+    pS->Dinh = SoPhanTu;
+}
+```
+
+### them
+
+> Thêm phần tử vào đỉnh của `Stack`.
+
+```c
+void them(int x, NganXep *pS)
+{
+    if (pS->Dinh == 0)
+        return;
+    pS->Dinh--;
+    pS->DuLieu[pS->Dinh] = x;
+}
+```
+
+### ktRong
+
+> Kiểm tra `Stack` rỗng.
+
+```c
+int ktRong(NganXep S)
+{
+    return S.Dinh == SoPhanTu;
+}
+```
+
+### ktDay
+
+> Kiểm tra `Stack` đầy.
+
+```c
+int ktDay(NganXep S)
+{
+    return S.Dinh == 0;
+}
+```
+
+### hienthi
+
+> Hiển thị `Stack`.
+
+```c
+void hienthi(NganXep *pS)
+{
+    for (int i = pS->Dinh; i < SoPhanTu; i++)
+        printf("%d ", pS->DuLieu[i]);
+}
+```
+
+### giatriDinh
+
+> Trả về giá trị tại đỉnh.
+
+```c
+int giatriDinh(NganXep S)
+{
+    return S.DuLieu[S.Dinh];
+}
+```
