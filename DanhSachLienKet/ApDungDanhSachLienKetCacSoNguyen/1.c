@@ -1,10 +1,10 @@
-// #include "PListLib.c"
+// #include "pLLib.c"
 // Định nghĩa các hàm nhập tập hợp và hiển thị danh sách
 // Định nghĩa hàm tìm tập hợp giao của 2 tập hợp
 // Gọi thực thi các hàm trên trong hàm main()
 
 #define USE_ALL 1
-#include "PListLib.c"
+#include "pLLib.c"
 
 int main()
 {

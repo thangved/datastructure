@@ -1,10 +1,10 @@
-// #include "PListLib.c"
+// #include "pLLib.c"
 // Định nghĩa các hàm nhập và hiển thị danh sách
 // Định nghĩa hàm xóa tất cả phần tử x trong danh sách
 // Gọi thực thi các hàm trên trong hàm main()
 
 #define USE_ALL 1
-#include "PListLib.c"
+#include "pLLib.c"
 
 int main()
 {

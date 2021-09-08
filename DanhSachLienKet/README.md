@@ -44,4 +44,4 @@ typedef Position List;
 
 - [Đa thức](./DaThuc)
 
-- [Thư viện PListLib.c](./lib/PListLib.c)
+- [Thư viện pLLib.c](./lib/pLLib.c)

@@ -27,48 +27,48 @@ typedef struct
 /*__END__DEFINE__TYPE__*/
 
 /* __FUNCTIONS__INTERFACE__ */
-void copyEvenNumbers(List list1, List *pList2);
+void copyEvenNumbers(List list1, List *pL2);
 int countList(ElementType x, List list);
 void deleteList(Position p, List *pL);
-void difference(List list1, List list2, List *pList);
+void difference(List list1, List list2, List *pL);
 int emptyList(List list);
 Position endList(List list);
-void erase(ElementType x, List *pList);
+void erase(ElementType x, List *pL);
 int fullList(List list);
 Position first(List list);
 float getAvg(List list);
 void insertList(ElementType x, Position p, List *pL);
-void insertSet(ElementType x, List *pList);
-void intersection(List list1, List list2, List *pList);
+void insertSet(ElementType x, List *pL);
+void intersection(List list1, List list2, List *pL);
 Position locate(ElementType x, List list);
 ElementType minList(List list);
 void makenullList(List *pL);
 int member(ElementType x, List list);
 ElementType maxList(List list);
 Position next(Position p, List L);
-void normalize(List *pList);
+void normalize(List *pL);
 Position previous(Position p, List L);
 void printList(List L);
 void printOddNumbers(List list);
 ElementType retrieve(Position p, List list);
-void removeAll(ElementType x, List *pList);
-void readList(List *pList);
-void readSet(List *pList);
+void removeAll(ElementType x, List *pL);
+void readList(List *pL);
+void readSet(List *pL);
 ElementType sumList(List list);
 void swap(ElementType array[], int i, int j);
-void sort(List *pList);
-void unionSet(List list1, List list2, List *pList);
+void sort(List *pL);
+void unionSet(List list1, List list2, List *pL);
 /* __END__FUNCTIONS__INTERFACE__*/
 
 // hàm chép toàn bộ các số chẵn trong danh sách L1 sang danh sách kết quả
-void copyEvenNumbers(List list1, List *pList2)
+void copyEvenNumbers(List list1, List *pL2)
 {
-    pList2->Last = 0;
+    pL2->Last = 0;
     for (int i = 0; i < list1.Last; i++)
         if (list1.Elements[i] % 2 == 0)
         {
-            pList2->Elements[pList2->Last] = list1.Elements[i];
-            pList2->Last++;
+            pL2->Elements[pL2->Last] = list1.Elements[i];
+            pL2->Last++;
         }
 }
 
@@ -98,12 +98,12 @@ void deleteList(Position p, List *pL)
 }
 
 // tim hieu cua hai tap
-void difference(List list1, List list2, List *pList)
+void difference(List list1, List list2, List *pL)
 {
-    makenullList(pList);
+    makenullList(pL);
     for (int i = 0; i < list1.Last; i++)
         if (!member(list1.Elements[i], list2))
-            insertSet(list1.Elements[i], pList);
+            insertSet(list1.Elements[i], pL);
 }
 
 // ham kiem tra mot ds co rong hay khong
@@ -119,9 +119,9 @@ Position endList(List list)
 }
 
 // Xóa phần tử đầu tiên có giá trị là x trong danh sách chỉ bởi con trỏ pL
-void erase(ElementType x, List *pList)
+void erase(ElementType x, List *pL)
 {
-    deleteList(locate(x, *pList), pList);
+    deleteList(locate(x, *pL), pL);
 }
 
 // ham kiem tra ham co full khong
@@ -161,19 +161,19 @@ void insertList(ElementType x, Position p, List *pL)
 }
 
 // them phan tu vao cuoi List
-void insertSet(ElementType x, List *pList)
+void insertSet(ElementType x, List *pL)
 {
-    pList->Elements[pList->Last] = x;
-    pList->Last++;
+    pL->Elements[pL->Last] = x;
+    pL->Last++;
 }
 
 // ham tim tap giao cua L1 L2
-void intersection(List list1, List list2, List *pList)
+void intersection(List list1, List list2, List *pL)
 {
-    makenullList(pList);
+    makenullList(pL);
     for (int i = 0; i < list1.Last; i++)
         if (member(list1.Elements[i], list2))
-            insertSet(list1.Elements[i], pList);
+            insertSet(list1.Elements[i], pL);
 }
 
 // ham tra ve vi tri dau tien cua phan tu x co trong List
@@ -231,13 +231,13 @@ Position next(Position p, List L)
 }
 
 // lam cho List co phan tu duy nhat
-void normalize(List *pList)
+void normalize(List *pL)
 {
-    for (int i = 0; i < pList->Last; i++)
-        for (int j = i + 1; j < pList->Last; j++)
-            if (pList->Elements[i] == pList->Elements[j])
+    for (int i = 0; i < pL->Last; i++)
+        for (int j = i + 1; j < pL->Last; j++)
+            if (pL->Elements[i] == pL->Elements[j])
             {
-                deleteList(j + 1, pList);
+                deleteList(j + 1, pL);
                 j--;
             }
 }
@@ -277,10 +277,10 @@ ElementType retrieve(Position p, List list)
 }
 
 // xoa tat ca phan tu co gia tri x trong List
-void removeAll(ElementType x, List *pList)
+void removeAll(ElementType x, List *pL)
 {
-    while (member(x, *pList))
-        deleteList(locate(x, *pList), pList);
+    while (member(x, *pL))
+        deleteList(locate(x, *pL), pL);
 }
 
 // ham nhap List tu ban phim
@@ -297,10 +297,10 @@ void readList(List *pL)
 }
 
 // ham them n phan tu vao List neu no chua co trong List
-void readSet(List *pList)
+void readSet(List *pL)
 {
-    readList(pList);
-    normalize(pList);
+    readList(pL);
+    normalize(pL);
 }
 
 // trả về tổng giá trị các phần tử trong danh sách L
@@ -322,23 +322,23 @@ void swap(ElementType array[], int i, int j)
 }
 
 // ham sap xep
-void sort(List *pList)
+void sort(List *pL)
 {
-    for (int i = 0; i < pList->Last; i++)
-        for (int j = i + 1; j < pList->Last; j++)
-            if (pList->Elements[i] > pList->Elements[j])
-                swap(pList->Elements, i, j);
+    for (int i = 0; i < pL->Last; i++)
+        for (int j = i + 1; j < pL->Last; j++)
+            if (pL->Elements[i] > pL->Elements[j])
+                swap(pL->Elements, i, j);
 }
 
 // tap hop cua 2 tap
-void unionSet(List list1, List list2, List *pList)
+void unionSet(List list1, List list2, List *pL)
 {
-    makenullList(pList);
+    makenullList(pL);
     int i;
     for (i = 0; i < list1.Last; i++)
-        insertSet(list1.Elements[i], pList);
+        insertSet(list1.Elements[i], pL);
 
     for (i = 0; i < list2.Last; i++)
         if (!member(list2.Elements[i], list1))
-            insertSet(list2.Elements[i], pList);
+            insertSet(list2.Elements[i], pL);
 }

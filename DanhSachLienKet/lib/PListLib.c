@@ -1,5 +1,5 @@
 /**
- * @file PListLib.c
+ * @file pLLib.c
  * @author Kim Minh Thắng (https://github.com/thangved)
  * @brief Thư viện danh sách liên kết
  * @version 0.1

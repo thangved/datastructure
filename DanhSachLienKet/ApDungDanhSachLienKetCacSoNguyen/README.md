@@ -10,7 +10,7 @@
 
 ### BÀI 1
 
-> #include "PListLib.c"
+> #include "pLLib.c"
 >
 > Định nghĩa các hàm nhập tập hợp và hiển thị danh sách
 >
@@ -21,7 +21,7 @@
 
 ### BÀI 2
 
-> #include "PListLib.c"
+> #include "pLLib.c"
 >
 > Định nghĩa các hàm nhập tập hợp và hiển thị danh sách
 >
@@ -33,7 +33,7 @@
 
 ### BÀI 3
 
-> #include "PLIstLib.c"
+> #include "pLLib.c"
 >
 > Định nghĩa các hàm nhập tập hợp và hiển thị danh sách
 >
@@ -45,7 +45,7 @@
 
 ### BÀI 4
 
-> #include "PListLib.c"
+> #include "pLLib.c"
 >
 > Định nghĩa các hàm nhập và hiển thị danh sách
 >
@@ -57,7 +57,7 @@
 
 ### BÀI 5
 
-> #include "PListLib.c"
+> #include "pLLib.c"
 >
 > Định nghĩa các hàm nhập, hiển thị, liệt kê các số nguyên lẻ
 >
@@ -69,7 +69,7 @@
 
 ### BÀI 6
 
-> #include "PListLib.c"
+> #include "pLLib.c"
 >
 > Định nghĩa các hàm nhập và hiển thị danh sách
 >
@@ -79,7 +79,7 @@
 
 ### BÀI 7
 
-> #include "PListLib.c"
+> #include "pLLib.c"
 >
 > Định nghĩa các hàm nhập và hiển thị danh sách
 >
@@ -91,7 +91,7 @@
 
 ### BÀI 8
 
-> #include "PListLib.c"
+> #include "pLLib.c"
 >
 > Định nghĩa các hàm nhập, hiển thị, trung bình cộng các phần tử
 >
@@ -103,7 +103,7 @@
 
 ### BÀI 9
 
-> #include "PListLib.c"
+> #include "pLLib.c"
 >
 > Định nghĩa các hàm nhập, hiển thị, trung bình cộng các phần tử
 >
@@ -113,7 +113,7 @@
 
 ### BÀI 10
 
-> #include "PListLib.c"
+> #include "pLLib.c"
 >
 > Định nghĩa các hàm nhập, hiển thị và sắp xếp danh sách
 >
