@@ -1,16 +1,21 @@
 {
     "cSpell.words": [
         "bằng",
+        "biệt",
         "chẵn",
         "chép",
         "cộng",
         "cùng",
         "cuối",
+        "dạng",
         "dụng",
         "ĐHCT",
+        "đỉnh",
         "đồng",
         "hiển",
+        "hiện",
         "khoitao",
+        "Khởi",
         "liên",
         "liệt",
         "LIỆU",
@@ -28,11 +33,13 @@
         "tiếp",
         "TOÁN",
         "tượng",
+        "việc",
         "viện",
         "Việt"
     ],
     "files.associations": {
         "*.handlebars": "handlebars",
-        "stdlib.h": "c"
+        "stdlib.h": "c",
+        "define.h": "c"
     }
 }
