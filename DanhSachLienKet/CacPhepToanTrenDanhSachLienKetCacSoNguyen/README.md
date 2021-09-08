@@ -189,8 +189,10 @@ void addFirst(ElementType x, List *pL)
 void append(ElementType x, List *pL)
 {
     Position P = endList(*pL);
-    P->Next = (Position)malloc(sizeof(struct Node));
-    P->Next->Element = x;
+    Position T = (Position)malloc(sizeof(struct Node));
+    T->Element = x;
+    T->Next = NULL;
+    P->Next = T;
 }
 ```
 

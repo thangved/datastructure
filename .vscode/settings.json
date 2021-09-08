@@ -23,11 +23,16 @@
         "strcpy",
         "thời",
         "THỨC",
+        "tichdathuc",
         "tiếng",
         "tiếp",
         "TOÁN",
         "tượng",
         "viện",
         "Việt"
-    ]
+    ],
+    "files.associations": {
+        "*.handlebars": "handlebars",
+        "stdlib.h": "c"
+    }
 }

@@ -163,6 +163,7 @@ void append(ElementType x, List *pL)
     Position P = endList(*pL);
     Position T = (Position)malloc(sizeof(struct Node));
     T->Element = x;
+    T->Next = NULL;
     P->Next = T;
 }
 void copyEvenNumbers(List L, List *pL)
