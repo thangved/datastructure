@@ -1,4 +1,4 @@
-# NGĂN XẾP (STACK)
+# NGĂN XẾP DANH SÁCH ĐẶC (STACK)
 
 ## MỘT SỐ KHÁI NIỆM
 

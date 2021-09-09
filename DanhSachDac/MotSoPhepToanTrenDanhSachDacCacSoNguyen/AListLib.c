@@ -1,7 +1,12 @@
 /**
- * Thư viện danh sách đặc dựa trên tài liệu của trường Đại học Cần Thơ.
- * ------------------------
- * © 2021 Minh Thắng https://github.com/thangved.
+ * @file AListLib.c
+ * @author Minh Thắng (https://github.com/thangved)
+ * @brief Thư viện Danh sách đặc dựa trên tài liệu của Trường Đại học Cần Thơ
+ * @version 0.1
+ * @date 2021-08-27
+ * 
+ * @copyright Copyright (c) Minh Thang 2021
+ * 
  */
 
 #include <stdio.h>
@@ -27,60 +32,18 @@ typedef struct
 /*__END__DEFINE__TYPE__*/
 
 /* __FUNCTIONS__INTERFACE__ */
-void copyEvenNumbers(List list1, List *pL2);
-int countList(ElementType x, List list);
 void deleteList(Position p, List *pL);
-void difference(List list1, List list2, List *pL);
-int emptyList(List list);
-Position endList(List list);
-void erase(ElementType x, List *pL);
-int fullList(List list);
-Position first(List list);
-float getAvg(List list);
+int emptyList(List L);
+Position endList(List L);
+int fullList(List L);
+Position first(List L);
 void insertList(ElementType x, Position p, List *pL);
-void insertSet(ElementType x, List *pL);
-void intersection(List list1, List list2, List *pL);
-Position locate(ElementType x, List list);
-ElementType minList(List list);
+Position locate(ElementType x, List L);
 void makenullList(List *pL);
-int member(ElementType x, List list);
-ElementType maxList(List list);
 Position next(Position p, List L);
-void normalize(List *pL);
 Position previous(Position p, List L);
-void printList(List L);
-void printOddNumbers(List list);
-ElementType retrieve(Position p, List list);
-void removeAll(ElementType x, List *pL);
-void readList(List *pL);
-void readSet(List *pL);
-ElementType sumList(List list);
-void swap(ElementType array[], int i, int j);
-void sort(List *pL);
-void unionSet(List list1, List list2, List *pL);
+ElementType retrieve(Position p, List L);
 /* __END__FUNCTIONS__INTERFACE__*/
-
-// hàm chép toàn bộ các số chẵn trong danh sách L1 sang danh sách kết quả
-void copyEvenNumbers(List list1, List *pL2)
-{
-    pL2->Last = 0;
-    for (int i = 0; i < list1.Last; i++)
-        if (list1.Elements[i] % 2 == 0)
-        {
-            pL2->Elements[pL2->Last] = list1.Elements[i];
-            pL2->Last++;
-        }
-}
-
-// dem x trong List
-int countList(ElementType x, List list)
-{
-    int count = 0;
-    for (int i = 0; i < list.Last; i++)
-        if (list.Elements[i] == x)
-            count++;
-    return count;
-}
 
 // ham xoa mot phan tu tai vi tri p
 void deleteList(Position p, List *pL)
@@ -97,51 +60,28 @@ void deleteList(Position p, List *pL)
     pL->Last--;
 }
 
-// tim hieu cua hai tap
-void difference(List list1, List list2, List *pL)
-{
-    makenullList(pL);
-    for (int i = 0; i < list1.Last; i++)
-        if (!member(list1.Elements[i], list2))
-            insertSet(list1.Elements[i], pL);
-}
-
 // ham kiem tra mot ds co rong hay khong
-int emptyList(List list)
+int emptyList(List L)
 {
-    return list.Last == 0;
+    return L.Last == 0;
 }
 
 // ham tra ve vi tri sau vi tri cuoi cung cua List
-Position endList(List list)
+Position endList(List L)
 {
-    return list.Last + 1;
-}
-
-// Xóa phần tử đầu tiên có giá trị là x trong danh sách chỉ bởi con trỏ pL
-void erase(ElementType x, List *pL)
-{
-    deleteList(locate(x, *pL), pL);
+    return L.Last + 1;
 }
 
 // ham kiem tra ham co full khong
-int fullList(List list)
+int fullList(List L)
 {
-    return list.Last == MaxLength;
+    return L.Last == MaxLength;
 }
 
 // ham tra ve vi tri dau tien cua List
-Position first(List list)
+Position first(List L)
 {
     return 1;
-}
-
-// tra ve gia tri trung binh cua List
-float getAvg(List list)
-{
-    if (list.Last == 0)
-        return -10000;
-    return (float)sumList(list) / list.Last;
 }
 
 // ham chen 1 phan tu vao List
@@ -160,39 +100,13 @@ void insertList(ElementType x, Position p, List *pL)
     pL->Last++;
 }
 
-// them phan tu vao cuoi List
-void insertSet(ElementType x, List *pL)
-{
-    pL->Elements[pL->Last] = x;
-    pL->Last++;
-}
-
-// ham tim tap giao cua L1 L2
-void intersection(List list1, List list2, List *pL)
-{
-    makenullList(pL);
-    for (int i = 0; i < list1.Last; i++)
-        if (member(list1.Elements[i], list2))
-            insertSet(list1.Elements[i], pL);
-}
-
 // ham tra ve vi tri dau tien cua phan tu x co trong List
-Position locate(ElementType x, List list)
+Position locate(ElementType x, List L)
 {
-    for (int i = 1; i <= list.Last; i++)
-        if (x == retrieve(i, list))
+    for (int i = 1; i <= L.Last; i++)
+        if (x == retrieve(i, L))
             return i;
-    return list.Last + 1;
-}
-
-//  trả về giá trị nhỏ nhất trong các phần tử của danh sách L
-ElementType minList(List list)
-{
-    ElementType min = list.Elements[0];
-    for (int i = 0; i < list.Last; i++)
-        if (min > list.Elements[i])
-            min = list.Elements[i];
-    return min;
+    return L.Last + 1;
 }
 
 // lam rong danh sach
@@ -201,33 +115,146 @@ void makenullList(List *pL)
     pL->Last = 0;
 }
 
-// ham kiem tra 1 phan tu co trong List hay khong
-int member(ElementType x, List list)
-{
-    for (int i = 1; i <= list.Last; i++)
-        if (x == retrieve(i, list))
-            return 1;
-    return 0;
-}
-
-//  trả về giá trị lớn nhất trong các phần tử của danh sách L
-ElementType maxList(List list)
-{
-    ElementType max = list.Elements[0];
-    for (int i = 0; i < list.Last; i++)
-        if (max < list.Elements[i])
-            max = list.Elements[i];
-    return max;
-}
-
 // tra ve vi tri sau vi tri p trong List
 Position next(Position p, List L)
 {
     if (p > L.Last)
         return 0;
-    if (p == L.Last)
-        return endList(L);
     return p + 1;
+}
+
+// tra ve vi tri truoc vi tri p trong List
+Position previous(Position p, List L)
+{
+    if (p <= first(L))
+        return 0;
+    return p - 1;
+}
+
+// ham tra ve gia tri cua List tai vi tri p
+ElementType retrieve(Position p, List L)
+{
+    if (!(p > L.Last))
+        return L.Elements[p - 1];
+    return 0;
+}
+
+/* Cac ham khong co trong AListLib*/
+
+#ifdef _USE_ALL
+/* __FUNCTIONS__INTERFACE__ */
+void copyEvenNumbers(List L1, List *pL2);
+int countList(ElementType x, List L);
+void difference(List L1, List L2, List *pL);
+void erase(ElementType x, List *pL);
+float getAvg(List L);
+void insertSet(ElementType x, List *pL);
+void intersection(List L1, List L2, List *pL);
+ElementType minList(List L);
+int member(ElementType x, List L);
+ElementType maxList(List L);
+void normalize(List *pL);
+void printList(List L);
+void printOddNumbers(List L);
+void removeAll(ElementType x, List *pL);
+void readList(List *pL);
+void readSet(List *pL);
+ElementType sumList(List L);
+void sort(List *pL);
+void unionSet(List L1, List L2, List *pL);
+/* __END__FUNCTIONS__INTERFACE__*/
+
+// hàm chép toàn bộ các số chẵn trong danh sách L1 sang danh sách kết quả
+void copyEvenNumbers(List L1, List *pL2)
+{
+    pL2->Last = 0;
+    for (int i = 0; i < L1.Last; i++)
+        if (L1.Elements[i] % 2 == 0)
+        {
+            pL2->Elements[pL2->Last] = L1.Elements[i];
+            pL2->Last++;
+        }
+}
+
+// dem x trong List
+int countList(ElementType x, List L)
+{
+    int count = 0;
+    for (int i = 0; i < L.Last; i++)
+        if (L.Elements[i] == x)
+            count++;
+    return count;
+}
+
+// tim hieu cua hai tap
+void difference(List L1, List L2, List *pL)
+{
+    makenullList(pL);
+    for (int i = 0; i < L1.Last; i++)
+        if (!member(L1.Elements[i], L2))
+            insertSet(L1.Elements[i], pL);
+}
+
+// Xóa phần tử đầu tiên có giá trị là x trong danh sách chỉ bởi con trỏ pL
+void erase(ElementType x, List *pL)
+{
+    deleteList(locate(x, *pL), pL);
+}
+
+// tra ve gia tri trung binh cua List
+float getAvg(List L)
+{
+    if (L.Last == 0)
+        return -10000;
+    float sum = 0;
+    for (int i = 0; i < L.Last; i++)
+        sum += L.Elements[i];
+    return (float)sum / L.Last;
+}
+
+// them phan tu vao cuoi List
+void insertSet(ElementType x, List *pL)
+{
+    pL->Elements[pL->Last] = x;
+    pL->Last++;
+}
+
+// ham tim tap giao cua L1 L2
+void intersection(List L1, List L2, List *pL)
+{
+    makenullList(pL);
+    for (int i = 0; i < L1.Last; i++)
+        if (member(L1.Elements[i], L2))
+            insertSet(L1.Elements[i], pL);
+}
+
+//  trả về giá trị nhỏ nhất trong các phần tử của danh sách L
+ElementType minList(List L)
+{
+    ElementType min = L.Elements[0];
+    for (int i = 0; i < L.Last; i++)
+        if (min > L.Elements[i])
+            min = L.Elements[i];
+    return min;
+}
+
+// ham kiem tra 1 phan tu co trong List hay khong
+int member(ElementType x, List L)
+{
+    for (int i = 1; i <= L.Last; i++)
+        if (x == retrieve(i, L))
+            return 1;
+    return 0;
+}
+
+//  trả về giá trị lớn nhất trong các phần tử của danh sách L
+ElementType maxList(List L)
+{
+    ElementType max = L.Elements[0];
+    for (int i = 0; i < L.Last; i++)
+        if (max < L.Elements[i])
+            max = L.Elements[i];
+    return max;
 }
 
 // lam cho List co phan tu duy nhat
@@ -237,17 +264,9 @@ void normalize(List *pL)
         for (int j = i + 1; j < pL->Last; j++)
             if (pL->Elements[i] == pL->Elements[j])
             {
-                deleteList(j + 1, pL);
+                deleteList(j, pL);
                 j--;
             }
-}
-
-// tra ve vi tri truoc vi tri p trong List
-Position previous(Position p, List L)
-{
-    if (p <= first(L))
-        return 0;
-    return p - 1;
 }
 
 // in ra List
@@ -260,20 +279,12 @@ void printList(List L)
 }
 
 // ham in so le
-void printOddNumbers(List list)
+void printOddNumbers(List L)
 {
-    for (int i = 0; i < list.Last; i++)
-        if (!(list.Elements[i] % 2 == 0))
-            printf("%d ", list.Elements[i]);
+    for (int i = 0; i < L.Last; i++)
+        if (!(L.Elements[i] % 2 == 0))
+            printf("%d ", L.Elements[i]);
     printf("\n");
-}
-
-// ham tra ve gia tri cua List tai vi tri p
-ElementType retrieve(Position p, List list)
-{
-    if (!(p > list.Last))
-        return list.Elements[p - 1];
-    return 0;
 }
 
 // xoa tat ca phan tu co gia tri x trong List
@@ -286,14 +297,12 @@ void removeAll(ElementType x, List *pL)
 // ham nhap List tu ban phim
 void readList(List *pL)
 {
-    makenullList(pL);
-    int n, e;
-    scanf("%d", &n);
-    for (int i = 0; i < n; i++)
-    {
-        scanf("%d", &e);
-        insertList(e, pL->Last + 1, pL);
-    }
+    Position last;
+    scanf("%d", &last);
+    pL->Last = last;
+
+    for (Position p = 1; p <= pL->Last; p++)
+        scanf("%d", &pL->Elements[p - 1]);
 }
 
 // ham them n phan tu vao List neu no chua co trong List
@@ -304,21 +313,12 @@ void readSet(List *pL)
 }
 
 // trả về tổng giá trị các phần tử trong danh sách L
-ElementType sumList(List list)
+ElementType sumList(List L)
 {
     ElementType sum = 0;
-    for (int i = 0; i < list.Last; i++)
-        sum += list.Elements[i];
+    for (int i = 0; i < L.Last; i++)
+        sum += L.Elements[i];
     return sum;
-}
-
-// ham hoan doi 2 phan tu trong mang
-void swap(ElementType array[], int i, int j)
-{
-    ElementType temp = array[i];
-
-    array[i] = array[j];
-    array[j] = temp;
 }
 
 // ham sap xep
@@ -327,18 +327,23 @@ void sort(List *pL)
     for (int i = 0; i < pL->Last; i++)
         for (int j = i + 1; j < pL->Last; j++)
             if (pL->Elements[i] > pL->Elements[j])
-                swap(pL->Elements, i, j);
+            {
+                ElementType Temp = pL->Elements[i];
+                pL->Elements[i] = pL->Elements[j];
+                pL->Elements[j] = Temp;
+            }
 }
 
 // tap hop cua 2 tap
-void unionSet(List list1, List list2, List *pL)
+void unionSet(List L1, List L2, List *pL)
 {
     makenullList(pL);
     int i;
-    for (i = 0; i < list1.Last; i++)
-        insertSet(list1.Elements[i], pL);
+    for (i = 0; i < L1.Last; i++)
+        insertSet(L1.Elements[i], pL);
 
-    for (i = 0; i < list2.Last; i++)
-        if (!member(list2.Elements[i], list1))
-            insertSet(list2.Elements[i], pL);
+    for (i = 0; i < L2.Last; i++)
+        if (!member(L2.Elements[i], L1))
+            insertSet(L2.Elements[i], pL);
 }
+#endif
