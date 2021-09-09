@@ -1,5 +1,7 @@
 # CẤU TRÚC DỮ LIỆU
 
+![LogoWS](./assets/images/logo-ws.png)
+
 > Tài liệu môn học `Cấu trúc dữ liệu`.
 
 ## LIÊN KẾT
