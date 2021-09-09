@@ -1,0 +1,8 @@
+{
+  "hosting": {
+    "public": "./docs/src/.vuepress/dist",
+    "ignore": [],
+    "rewrites": [
+    ]
+  }
+}
