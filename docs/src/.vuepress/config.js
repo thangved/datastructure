@@ -4,7 +4,7 @@ module.exports = {
 	/**
 	 * Ref：https://v1.vuepress.vuejs.org/config/#title
 	 */
-	title: 'CẤU TRÚC DỮ LIỆU VÀ GIẢI THUẬT',
+	title: 'CTDL & GT',
 	/**
 	 * Ref：https://v1.vuepress.vuejs.org/config/#description
 	 */
@@ -18,7 +18,8 @@ module.exports = {
 	head: [
 		['meta', { name: 'theme-color', content: '#3eaf7c' }],
 		['meta', { name: 'apple-mobile-web-app-capable', content: 'yes' }],
-		['meta', { name: 'apple-mobile-web-app-status-bar-style', content: 'black' }]
+		['meta', { name: 'apple-mobile-web-app-status-bar-style', content: 'black' }],
+		['link', {rel: 'icon', type: 'image/png', href: './assets/images/logo-ws.png'}]
 	],
 
 	/**
@@ -67,6 +68,9 @@ module.exports = {
 					collapsable: true,
 					children: [
 						'',
+						'do-phuc-tap',
+						'cac-kieu-du-lieu',
+						'dong-gop'
 					]
 				}
 			],
@@ -77,7 +81,7 @@ module.exports = {
 					children: [
 						'',
 						'cai-dat',
-						'lien-ket'
+						'bai-tap'
 					]
 				},
 			],
@@ -87,7 +91,7 @@ module.exports = {
 					collapsable: true,
 					children: [
 						'',
-						'lien-ket'
+						'bai-tap'
 					]
 				}
 			],

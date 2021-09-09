@@ -1,4 +1,4 @@
-# LIÊN KẾT
+# BÀI TẬP
 
 - [Các phép toán trên danh sách liên kết các số nguyên](./CacPhepToanTrenDanhSachLienKetCacSoNguyen)
 

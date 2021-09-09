@@ -1,4 +1,4 @@
-# LIÊN KẾT
+# BÀI TẬP
 
 - [Một số phép toán trên danh sách đặc các số nguyên](./MotSoPhepToanTrenDanhSachDacCacSoNguyen)
 

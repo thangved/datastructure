@@ -1,7 +1,7 @@
 {
   "name": "datastructure",
   "version": "0.0.1",
-  "description": "Cấu trúc dữ liệu",
+  "description": "Cấu trúc dữ liệu và giải thuật",
   "main": "index.js",
   "authors": {
     "name": "thangved",

@@ -1,7 +1,8 @@
 ---
 home: true
+lang: vi-VN
 heroImage: ./assets/images/logo-ws.png
-tagline: Cấu trúc dữ liệu
+tagline: Cấu trúc dữ liệu và giải thuật
 actionText: BẮT ĐẦU →
 actionLink: /guide/
 features:
