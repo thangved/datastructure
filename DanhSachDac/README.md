@@ -1,5 +1,7 @@
 # DANH SÁCH ĐẶC
 
+![banner](../assets/images/dsd-banner.png)
+
 ## MỘT SỐ KHÁI NIỆM
 
 ### Danh sách đặc

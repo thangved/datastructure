@@ -2,6 +2,8 @@
 
 > *algorithm complexity*
 
+![banner](../assets/images/dpt-banner.png)
+
 ## GIẢI THUẬT
 
 ### KHÁI NIỆM
@@ -58,4 +60,4 @@ void sort(int A[])
 
 ### VÍ DỤ VỀ CÁCH TÍNH ĐỘ PHỨC TẠP
 
-> [Click me 🔥](./vidu.pdf)
+> [Click me 🔥](../assets/pdf/vidu.pdf)

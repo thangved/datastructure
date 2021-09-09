@@ -1,5 +1,7 @@
 # NGĂN XẾP (STACK)
 
+![banner](../assets/images/nx-banner.png)
+
 ## MỘT SỐ KHÁI NIỆM
 
 ### NGĂN XẾP (Stack)

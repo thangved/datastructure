@@ -1,8 +1,10 @@
 # CẤU TRÚC DỮ LIỆU
 
-<img src='./assets/images/logo-ws.png' width='50px'/>
+![banner](./assets/images/ctdlvgt-banner.png)
 
-> Tài liệu môn học `Cấu trúc dữ liệu`.
+[<img src='./assets/images/logo-ws.png' width='30px'/>](https://minhthangdev.pw)
+
+> Xin chào mọi người, mình là ZỊT mà mà thôi đi 🦆 🦆.
 
 ## LIÊN KẾT
 
@@ -18,9 +20,9 @@
 
 - [Ngăn Xếp](./NganXep)
 
-- [Hàng đợi](./HangDoi)
+- [Hàng đợi (Chờ cập nhật...)](./HangDoi)
 
-- [Cây](./Cay)
+- [Cây (Chờ cập nhật...)](./Cay)
 
 ## ĐÓNG GÓP
 

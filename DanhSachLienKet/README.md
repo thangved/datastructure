@@ -1,6 +1,6 @@
 # DANH SÁCH LIÊN KẾT
 
-![code.png](https://raw.githubusercontent.com/thangved/images/main/2021/09/07-16-20-05-code.png)
+![banner](../assets/images/dslk-banner.png)
 
 ## MỘT SỐ KHÁI NIỆM
 

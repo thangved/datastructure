@@ -259,7 +259,7 @@ List difference(List L1, List L2)
 ```c
 void erase(ElementType x, List *pL)
 {
-    if (locate(x, *pL) != NULL)
+    if (locate(x, *pL)->Next != NULL)
         deleteList(locate(x, *pL), pL);
 }
 ```
