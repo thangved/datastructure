@@ -1,6 +1,6 @@
 # CÁC PHÉP TOÁN TRÊN DANH SÁCH LIÊN KẾT CÁC SỐ NGUYÊN
 
-## CÁC PHÉP TOÁN CÓ SẴN
+## CÁC PHÉP TOÁN CƠ BẢN
 
 ### deleteList
 
