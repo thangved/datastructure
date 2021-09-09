@@ -21,6 +21,10 @@ struct Node{
 ### Position
 
 > `Position` chỉ vị trí của phần tử, vị trí của phần tử là địa chỉ phần tử trước nó và có kiểu là `struct Node*`
+>
+> => Để lấy giá trị tại `Position P` ta phải truy cập vào `Next` và lấy ra trường `Element`.
+>
+> **P->Next->Element;**
 
 ```c
 typedef struct Node* Position;
