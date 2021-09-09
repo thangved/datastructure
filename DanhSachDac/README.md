@@ -59,6 +59,6 @@ typedef struct
 - [Các phép toán của danh sách sinh viên](./CacPhepToanCuaDanhSachSinhVien)
 
 - [Gọi thực thi các phép toán của danh sách sinh viên
-]('./GoiThucThiCacPhepToanCuaDanhSachSinhVien)
+](./GoiThucThiCacPhepToanCuaDanhSachSinhVien)
 
 - [Thư viện **AListLib.c**](./lib/AListLib.c)
