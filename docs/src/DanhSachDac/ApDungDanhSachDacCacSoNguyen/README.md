@@ -18,7 +18,19 @@
 > 
 > - Khai báo biến và gọi thực thi các hàm trên trong hàm main()
 
-[link](./1.c)
+```c
+#include "AListLib.c"
+
+int main()
+{
+    List list1, list2;
+    readList(&list1);
+    printList(list1);
+    printOddNumbers(list1);
+    copyEvenNumbers(list1, &list2);
+    printList(list2);
+}
+```
 
 ### BÀI 2
 
@@ -28,7 +40,17 @@
 > 
 > - Khai báo và gọi thực thi các hàm trên trong hàm main()
 
-[link](./2.c)
+```c
+#include "AListLib.c"
+
+int main()
+{
+    List list;
+    readList(&list);
+    printList(list);
+    printf("%.3f", getAvg(list));
+}
+```
 
 ### BÀI 3
 
@@ -40,7 +62,20 @@
 > 
 > - Gọi thực thi các hàm trên trong hàm main()
 
-[link](./3.c)
+```c
+#include "AListLib.c"
+
+int main()
+{
+    List list1, list2, list3;
+    readSet(&list1);
+    readSet(&list2);
+    unionSet(list1, list2, &list3);
+    printList(list1);
+    printList(list2);
+    printList(list3);
+}
+```
 
 ### BÀI 4
 
@@ -52,7 +87,23 @@
 > 
 > - Khai báo biến và gọi thực thi các hàm trên trong hàm main()
 
-[link](./4.c)
+```c
+#include "AListLib.c"
+
+int main()
+{
+    List list;
+    readList(&list);
+    printList(list);
+
+    ElementType x;
+    scanf("%d", &x);
+    removeAll(x, &list);
+    printList(list);
+
+    return 0;
+}
+```
 
 ### BÀI 5
 
@@ -64,7 +115,23 @@
 > 
 > - Gọi thực thi các hàm trên trong hàm main()
 
-[link](./5.c)
+```c
+int main()
+{
+    List list1, list2, list3;
+
+    readSet(&list1);
+    readSet(&list2);
+
+    difference(list1, list2, &list3);
+
+    printList(list1);
+    printList(list2);
+    printList(list3);
+
+    return 0;
+}
+```
 
 ### BÀI 6
 
@@ -76,4 +143,18 @@
 > 
 > - Viết hàm main
 
-[link](./6.c)
+```c
+#include "AListLib.c"
+
+int main()
+{
+    List list;
+    readList(&list);
+    printList(list);
+    int x;
+    scanf("%d", &x);
+    deleteList(locate(x, list), &list);
+    printList(list);
+    return 0;
+}
+```
