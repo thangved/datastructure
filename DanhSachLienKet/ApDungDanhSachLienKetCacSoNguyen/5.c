@@ -1,10 +1,10 @@
-// #include "pLLib.c"
+// #include "PListLib.c"
 // Định nghĩa các hàm nhập, hiển thị, liệt kê các số nguyên lẻ
 // Định nghĩa hàm chép các số nguyên chẵn sang danh sách kết quả
 // Gọi thực thi các hàm trên trong hàm main()
 
 #define USE_ALL 1
-#include "pLLib.c"
+#include "PListLib.c"
 
 int main()
 {
