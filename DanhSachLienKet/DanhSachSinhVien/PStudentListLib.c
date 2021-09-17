@@ -53,8 +53,8 @@ int append(Student s, List *pL)
     strcpy(P->Next->Element.ID, s.ID);
     strcpy(P->Next->Element.Name, s.Name);
     P->Next->Element.R1 = s.R1;
-    P->Next->Element.R1 = s.R2;
-    P->Next->Element.R1 = s.R3;
+    P->Next->Element.R2 = s.R2;
+    P->Next->Element.R3 = s.R3;
     return 1;
 }
 List getList()
