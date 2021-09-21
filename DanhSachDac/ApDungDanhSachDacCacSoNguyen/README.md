@@ -3,9 +3,9 @@
 ## LƯU Ý
 
 > Đây là phần áp dụng danh sách đặc các số nguyên trên hệ thống else
-> 
+>
 > Mình chỉ viết hàm `main` để các bạn biết cách làm. Còn các hàm khác không có trong file `AListLib.c` các bạn phải tự định nghĩa theo yêu cầu đề bài.
-
+>
 ## BÀI TẬP
 
 ### BÀI 1

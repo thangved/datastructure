@@ -126,7 +126,7 @@ ElementType retrieve(Position P, List L)
         return P->Next->Element;
 }
 /*__END__FUNCTION__*/
-// #define USE_ALL 1
+#define USE_ALL 1
 #ifdef USE_ALL
 /*__OTHER__FUNCTION__*/
 /*__DECLARATION__*/
@@ -152,72 +152,62 @@ List unionSet(List L1, List L2);         // tinh tap hop cua 2 ds
 /*__FUNCTION__BODY__*/
 void addFirst(ElementType x, List *pL)
 {
-    Position P;
-    P = (Position)malloc(sizeof(struct Node));
-    P->Element = x;
-    P->Next = (*pL)->Next;
-    (*pL)->Next = P;
+    insertList(x, first(*pL), pL);
 }
 void append(ElementType x, List *pL)
 {
-    Position P = endList(*pL);
-    Position T = (Position)malloc(sizeof(struct Node));
-    T->Element = x;
-    T->Next = NULL;
-    P->Next = T;
+    if (!member(x, *pL))
+        insertList(x, endList(*pL), pL);
 }
 void copyEvenNumbers(List L, List *pL)
 {
     makenullList(pL);
-    Position P = L;
-    while (P->Next != NULL)
+    Position P = first(L);
+    Position End = endList(L);
+    while (P != End)
     {
-        if (P->Next->Element % 2 == 0)
-            append(P->Next->Element, pL);
-        P = P->Next;
+        if (retrieve(P, L) % 2 == 0)
+            append(retrieve(P, L), pL);
+        else
+            P = next(P, L);
     }
 }
 void deleteX(ElementType x, List *pL)
 {
-    Position P = first(*pL);
-    while (P != endList(*pL))
+    while (locate(x, *pL) != endList(*pL))
     {
-        if (retrieve(P, *pL) == x)
-            deleteList(P, pL);
-        else
-            P = next(P, *pL);
+        deleteList(locate(x, *pL), pL);
     }
 }
 List difference(List L1, List L2)
 {
     List L;
-    makenullList(&L);
-    Position P = L1;
-    while (P->Next != NULL)
+    Position P = first(L1);
+    Position EL1 = endList(L1);
+    Position EL2 = endList(L2);
+    while (P != EL1)
     {
-        if (!member(P->Next->Element, L) && !member(P->Next->Element, L2))
-            append(P->Next->Element, &L);
-        P = P->Next;
+        if (locate(retrieve(P, L1), L2) != EL2)
+            append(retrieve(P, L1), &L);
+        P = next(P, L1);
     }
-    return L;
 }
 void erase(ElementType x, List *pL)
 {
-    if (locate(x, *pL)->Next != NULL)
+    if (locate(x, *pL) != endList(*pL))
         deleteList(locate(x, *pL), pL);
 }
 float getAvg(List L)
 {
     float sum = 0;
     int length = 0;
-    Position P = L;
-    if (P->Next == NULL)
-        return -10000;
-    while (P->Next != NULL)
+    Position P = first(L);
+    Position E = endList(L);
+    while (P != E)
     {
-        sum += P->Next->Element;
+        sum += retrieve(P, L);
+        P = next(P, L);
         length++;
-        P = P->Next;
     }
     return sum / length;
 }
@@ -225,25 +215,20 @@ List intersection(List L1, List L2)
 {
     List L;
     makenullList(&L);
-    Position P = L2;
-    while (P->Next != NULL)
+    Position P2 = first(L2);
+    Position E2 = endList(L2);
+    while (P2 != E2)
     {
-        if (!member(P->Next->Element, L) && member(P->Next->Element, L1))
-            append(P->Next->Element, &L);
-        P = P->Next;
+        if (member(retrieve(P2, L2), L1))
+            if (!member(retrieve(P2, L2), L))
+                addFirst(retrieve(P2, L2), &L);
+        P2 = next(P2, L2);
     }
     return L;
 }
 int member(ElementType x, List L)
 {
-    Position P = L;
-    while (P->Next != NULL)
-    {
-        if (P->Next->Element == x)
-            return 1;
-        P = P->Next;
-    }
-    return 0;
+    return locate(x, L) != endList(L);
 }
 void normalize(List *pL)
 {
@@ -267,11 +252,12 @@ void normalize(List *pL)
 }
 void printList(List L)
 {
-    Position P = L;
-    while (P->Next != NULL)
+    Position P = first(L);
+    Position E = endList(L);
+    while (P != E)
     {
-        printf("%d ", P->Next->Element);
-        P = P->Next;
+        printf("%d ", retrieve(P, L));
+        P = next(P, L);
     }
     printf("\n");
 }
@@ -290,14 +276,17 @@ List readSet()
 {
     List L;
     makenullList(&L);
-    int n, x;
+    int n;
+    ElementType e;
     scanf("%d", &n);
     for (int i = 0; i < n; i++)
     {
-        scanf("%d", &x);
-        if (!member(x, L))
-            addFirst(x, &L);
+        scanf("%d", &e);
+        if (member(e, L))
+            continue;
+        addFirst(e, &L);
     }
+
     return L;
 }
 void removeAll(ElementType x, List *pL)
@@ -309,15 +298,12 @@ void readList(List *pL)
 {
     makenullList(pL);
     int n;
-    Position P = *pL,
-             N;
     scanf("%d", &n);
+    ElementType e;
     for (int i = 0; i < n; i++)
     {
-        N = (Position)malloc(sizeof(struct Node));
-        scanf("%d", &N->Element);
-        P->Next = N;
-        P = P->Next;
+        scanf("%d", &e);
+        insertList(e, endList(*pL), pL);
     }
 }
 void sort(List *pL)
@@ -344,20 +330,23 @@ List unionSet(List L1, List L2)
 {
     List L;
     makenullList(&L);
-    Position P = L1;
-    while (P->Next != NULL)
+    Position P1 = first(L1),
+             P2 = first(L2),
+             E1 = endList(L1),
+             E2 = endList(L2);
+    while (P1 != E1)
     {
-        if (!member(P->Next->Element, L))
-            append(P->Next->Element, &L);
-        P = P->Next;
+        insertList(retrieve(P1, L1), endList(L), &L);
+        P1 = next(P1, L1);
     }
-    P = L2;
-    while (P->Next != NULL)
+
+    while (P2 != E2)
     {
-        if (!member(P->Next->Element, L))
-            append(P->Next->Element, &L);
-        P = P->Next;
+        if (!member(retrieve(P2, L2), L))
+            insertList(retrieve(P2, L2), endList(L), &L);
+        P2 = next(P2, L2);
     }
+
     return L;
 }
 /*__END__FUNCTION__BODY__*/
