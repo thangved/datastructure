@@ -72,12 +72,12 @@ int main()
         // **** In thong tin voi tung so luong quay ****
         printf(info, open, (float)(totalTime / client));
 
+        if (totalTime / client > maxWaitTime)
+            continue;
+
         // **** Ket luan neu so quay toi da dap ung yeu cau ****
-        if (totalTime / client <= maxWaitTime)
-        {
-            printf(success, open);
-            return 0;
-        }
+        printf(success, open);
+        return 0;
     }
 
     // **** Ket luan neu failed ****
